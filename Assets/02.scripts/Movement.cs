@@ -18,13 +18,13 @@ public class Movement : MonoBehaviour
     }
     void Move()
     {
-        float Speed = 5f;
+        float Speed = 0.5f;
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
         Vector3 Move = new Vector3(x, 0, z);
 
 
-        this.transform.Translate(Move * Speed * Time.deltaTime);
+        RB_player.AddForce(Move * Speed, ForceMode.Impulse);
     }
     void Jump()
     {
@@ -36,4 +36,13 @@ public class Movement : MonoBehaviour
             
         }
     }
+    /*public float moveSpeed = 5f;
+     *float h = Input.GetAxis("Horizontal");
+     *float v = Input.GetAxis("vertical");
+     *
+     *vector3 dir = new Vector3(h,0,v);
+     *Debug.Log($"현재 입력 : {dir}");
+     *
+     *transform.position += dir * moveSpeed * Time.deltaTime;
+     */
 }
