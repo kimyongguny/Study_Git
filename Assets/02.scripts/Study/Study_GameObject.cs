@@ -5,7 +5,7 @@ using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCou
 public class Study_GameObject : MonoBehaviour
 {
     public GameObject Prefab;
-    void Start()
+    void Awake()
     {
         CreateAmongus();
     }
